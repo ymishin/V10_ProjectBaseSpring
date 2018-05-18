@@ -16,8 +16,8 @@ public class PersonService {
     private final PersonRepository repository;
     
     public PersonService(PersonRepository repository) {
-        this.repository = repository;     
-        addSomeData();
+        this.repository = repository;
+//        addSomeData();
     }
 
     public List<Person> findAll(int offset, int limit, Map<String, Boolean> sortOrders) {
@@ -56,14 +56,14 @@ public class PersonService {
         return Math.toIntExact(repository.count());
     }
     
-    private void addSomeData() {
-        repository.deleteAll();
-        for (int i = 0; i < 1; ++i) {
-        	repository.save(new Person("John", 10));
-        	repository.save(new Person("Jack", 20));
-        	repository.save(new Person("Bill", 30));
-        	repository.save(new Person("Lars", 40));
-        	repository.save(new Person("Paul", 50));
-        }
-    }
+//    private void addSomeData() {
+//        repository.deleteAll();
+//        for (int i = 0; i < 1; ++i) {
+//        	repository.save(new Person("John", 10));
+//        	repository.save(new Person("Jack", 20));
+//        	repository.save(new Person("Bill", 30));
+//        	repository.save(new Person("Lars", 40));
+//        	repository.save(new Person("Paul", 50));
+//        }
+//    }
 }

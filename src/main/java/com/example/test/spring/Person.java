@@ -10,6 +10,16 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "Persons")
 public class Person {
+
+	Person()
+	{	
+	}
+	
+	Person(String name, int age)
+	{
+		this.name = name;
+		this.age = age;		
+	}
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,14 +54,4 @@ public class Person {
     public void setAge(int age) {
     	this.age = age;
     }
-	
-	Person(String name, int age)
-	{
-		this.name = name;
-		this.age = age;		
-	}
-	
-	Person()
-	{	
-	}
 }

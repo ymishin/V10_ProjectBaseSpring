@@ -10,9 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-
 import java.util.Properties;
-
 import javax.sql.DataSource;
 
 @Configuration
@@ -22,6 +20,16 @@ public class HibernateConfig {
 	public JpaVendorAdapter jpaVendorAdapter() {
 		return new HibernateJpaVendorAdapter();
 	}
+
+//	@Bean
+//	public DataSource dataSource() {
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName(com.mysql.jdbc.Driver.class.getName());	
+//		dataSource.setUrl("jdbc:mysql://localhost:3306/my_schema");
+//		dataSource.setUsername("root");
+//		dataSource.setPassword("1234");
+//		return dataSource;
+//	}
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(
@@ -37,10 +45,10 @@ public class HibernateConfig {
 
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource);
-		em.setPackagesToScan("com.example.test.spring");
+		em.setPackagesToScan(V10_TestApplication.class.getPackage().getName());
 		em.setJpaVendorAdapter(jpaVendorAdapter());
 		em.setJpaProperties(properties);
-
+		
 		return em;
 	}
 }

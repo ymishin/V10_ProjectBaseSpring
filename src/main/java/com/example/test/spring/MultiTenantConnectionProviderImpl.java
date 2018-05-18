@@ -13,6 +13,9 @@ import javax.sql.DataSource;
 @Component
 public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionProvider {
 
+//	@Autowired
+//	private DataSource dataSource;
+	
   private final DataSource dataSource;
   
   @Autowired

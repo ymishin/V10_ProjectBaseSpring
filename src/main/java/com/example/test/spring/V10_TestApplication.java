@@ -9,16 +9,16 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * The entry point of the Spring Boot application.
  */
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class V10_TestApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(V10_TestApplication.class, args);
     }
 
     @Override
     protected SpringApplicationBuilder configure(
             SpringApplicationBuilder builder) {
-        return builder.sources(Application.class);
+        return builder.sources(V10_TestApplication.class);
     }
 
 }
